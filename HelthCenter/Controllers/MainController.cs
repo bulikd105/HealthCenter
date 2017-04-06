@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Encodings.Web;
 
 namespace HelthCenter.Controllers
 {
-    public class HomeController : Controller
+    public class MainController : Controller
     {
         public IActionResult Index()
         {
@@ -15,20 +16,19 @@ namespace HelthCenter.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
-        public IActionResult Error()
+        public IActionResult MyPage(string name, int num)
         {
+            ViewData["Message"] = "Hello " + name;
+            ViewData["Num"] = num;
+
             return View();
         }
     }

@@ -60,6 +60,8 @@ namespace HelthCenter
                     name: "default",
                     template: "{controller=Main}/{action=Index}/{id?}");
             });
+
+            SeedData.Initialize(app.ApplicationServices);
         }
     }
 }
